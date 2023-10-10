@@ -68,17 +68,17 @@ public class Restaurant {
         }
 
     }
-//    public int calculateOrderValue(String... itemNames) {
-//        int totalOrderValue = 0;
-//        for (String itemName : itemNames) {
-//            Item item = findItemByName(itemName);
-//            if (item != null) {
-//                totalOrderValue += item.getPrice();
-//            }
-//        }
-//        return totalOrderValue;
+    public int calculateOrderValue(String... itemNames) {
+        int totalOrderValue = 0;
+        for (String itemName : itemNames) {
+            Item item = findItemByName(itemName);
+            if (item != null) {
+                totalOrderValue += item.getPrice();
+            }
+        }
+        return totalOrderValue;
 
-//    }
+    }
 
     public String getName() {
         return name;
