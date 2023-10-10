@@ -63,7 +63,22 @@ public class Restaurant {
                 +"Closing time:"+ closingTime +"\n"
                 +"Menu:"+"\n"+getMenu());
 
+        for (Item item : menu) {
+            System.out.println(item.getName() + " - " + item.getPrice());
+        }
+
     }
+//    public int calculateOrderValue(String... itemNames) {
+//        int totalOrderValue = 0;
+//        for (String itemName : itemNames) {
+//            Item item = findItemByName(itemName);
+//            if (item != null) {
+//                totalOrderValue += item.getPrice();
+//            }
+//        }
+//        return totalOrderValue;
+
+//    }
 
     public String getName() {
         return name;

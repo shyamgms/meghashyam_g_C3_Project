@@ -55,4 +55,35 @@ class RestaurantTest {
         assertThrows(ItemNotFoundException.class,
                 () -> restaurant.removeFromMenu("French fries"));
     }
+
+    @Test
+    public void calculate_order_value_for_items_in_menu() {
+        // Add items to the menu
+        restaurant.addToMenu("Sweet corn soup", 119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Sizzling brownie", 319);
+
+        // Calculate the order value for selected items
+        int orderValue = restaurant.calculateOrderValue("Sweet corn soup", "Vegetable lasagne");
+
+        // Assert that the order value is correct
+        assertEquals(119 + 269, orderValue);
+    }
+
+    @Test
+    public void calculate_order_value_for_items_not_in_menu() {
+
+        int orderValue = restaurant.calculateOrderValue("French fries", "Burger");
+
+        assertEquals(0, orderValue);
+    }
+
+    @Test
+    public void calculate_order_value_for_empty_order() {
+
+        int orderValue = restaurant.calculateOrderValue();
+
+        assertEquals(0, orderValue);
+    }
 }
+
